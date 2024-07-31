@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../theme/theme.dart';
+import '../screens/profile.dart'; // Import the profile_page
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -14,7 +15,6 @@ class _MainPageState extends State<MainPage> {
   static const List<Widget> _widgetOptions = <Widget>[
     Text('Задачи'),
     Text('Сегодня'),
-    Text('Профиль'),
     Text('Выполнено'),
   ];
 
@@ -36,16 +36,18 @@ class _MainPageState extends State<MainPage> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
-            end: Alignment.bottomRight, // Изменил направление градиента
+            end: Alignment.bottomRight, 
             colors: [
               DoDidDoneTheme.lightTheme.colorScheme.secondary,
               DoDidDoneTheme.lightTheme.colorScheme.primary,
             ],
           ),
         ),
-        child: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
+        child: _selectedIndex == 2 // Check if Profile is selected
+            ? const ProfilePage() // Show ProfilePage if selected
+            : Center(
+                child: _widgetOptions.elementAt(_selectedIndex),
+              ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/0qode_symbol_1.png', // Замените на правильный путь к файлу
+                    'assets/_1.png', // Замените на правильный путь к файлу
                     height: 60, // Устанавливаем высоту изображения
                   ),
                   const SizedBox(width: 8),

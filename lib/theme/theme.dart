@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//import 'package:flutter/material.dart';
 class DoDidDoneTheme {
   static ThemeData lightTheme = ThemeData(
     colorScheme: ColorScheme.fromSeed(
@@ -10,9 +10,14 @@ class DoDidDoneTheme {
     useMaterial3: true,
     // Добавляем стиль для кнопок
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.white,
-        textStyle: const TextStyle(color: Colors.white), // Текст кнопок белый
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(
+          const Color(0xFF4ceb8b), // Цвет фона кнопки
+        ),
+        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+        textStyle: MaterialStateProperty.all<TextStyle>(
+          const TextStyle(color: Colors.white), // Текст кнопок белый
+        ),
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -24,4 +29,3 @@ class DoDidDoneTheme {
     ),
   );
 }
-
